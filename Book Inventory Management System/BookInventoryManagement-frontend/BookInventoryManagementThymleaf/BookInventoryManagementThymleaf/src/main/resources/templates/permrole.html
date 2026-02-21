@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th:"http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>PermRole</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<h1>PermRole List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Role Number</th>
+				<th>Perm Role</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="permRole : ${permRole}">
+				<td th:text="${permRole.roleNumber}"></td>
+				<td th:text="${permRole.permRole}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<table thif="${permRole != null}">
+	</table>
+	<div th:if="${permRole==null}">No Records</div>
+	<button type="button" class="btn btn-primary"><a href="http://localhost:8080/permrole/new">insert</a></button>
+</body>
+</html>
+

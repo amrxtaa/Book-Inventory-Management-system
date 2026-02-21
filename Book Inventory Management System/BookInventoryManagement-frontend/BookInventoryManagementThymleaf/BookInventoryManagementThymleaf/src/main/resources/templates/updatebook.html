@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Update Task</title>
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <style>
+
+        /* Add custom styles here */
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+    <h1 class="mb-4">Update Book</h1>
+
+    <form action="/update" method="post">
+
+        <!-- Hidden input field to store the taskid -->
+
+        <div class="form-group">
+
+            <label for="isbn">Isbn:</label>
+
+            <input type="number" class="form-control" id="isbn" name="isbn" readonly th:value="${bookPojo.isbn}">
+
+        </div>
+
+        <!-- Task name -->
+
+        <div class="form-group">
+
+            <label for="title">Title:</label>
+
+            <input type="text" class="form-control" id="title" name="title" th:value="${bookPojo.title}">
+
+        </div>
+
+        <!-- Description -->
+
+        <div class="form-group">
+
+            <label for="description">Description:</label>
+
+            <input type="text" class="form-control" id="description" name="description" th.value="${bookPojo.description}">
+
+        </div>
+
+        <!-- Due Date -->
+
+        <div class="form-group">
+
+            <label for="edition">Edition:</label>
+
+            <input type="text" class="form-control" id="edition" name="edition" th:value="${bookPojo.edition}">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Book</button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

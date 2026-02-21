@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add PermRole</title>
+</head>
+<body>
+	<h2>Add new PermRole</h2>
+	<form action="#" th:action="@{/permrole}" th:object="${permrole}" method="post">
+		<p>
+			<label for="roleNumber">Role Number : </label>
+			<input type="Number" id="roleNumber" name="roleNumber" required><br>
+		</p>
+		<p>
+			<label for="permRole">PermRole : </label>
+			<input type="text" id="permRole" name="permRole" required><br>
+		</p>
+		<p>
+			<input type="submit" value="save">
+		</p>
+	</form>
+</body>
+</html>

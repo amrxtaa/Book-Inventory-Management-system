@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Reviewer</title>
+</head>
+<body>
+	<h2>Add new Reviewer</h2>
+	<form action="#" th:action="@{/reviewer}" th:object="${reviewer}" method="post">
+		<p>
+			<label for="reviewerId">Reviewer ID : </label>
+			<input type="Number" id="reviewerId" name="reviewerId" required><br>
+		</p>
+		<p>
+			<label for="name">Name : </label>
+			<input type="text" id="name" name="name" required><br>
+		</p>
+		<p>
+			<label for="employedby">EmployedBy : </label>
+			<input type="text" id="employedby" name="employedby" required><br>
+		</p>
+		<p>
+			<input type="submit" value="save">
+		</p>
+	</form>
+</body>
+</html>

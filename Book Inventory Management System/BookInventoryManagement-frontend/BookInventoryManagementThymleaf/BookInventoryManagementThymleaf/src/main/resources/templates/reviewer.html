@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th:"http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Reviewer</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<h1>Reviewer List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Reviewer ID</th>
+				<th>Name</th>
+				<th>EmployedBy</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="reviewer : ${reviewer}">
+				<td th:text="${reviewer.reviewerId}"></td>
+				<td th:text="${reviewer.name}"></td>
+				<td th:text="${reviewer.employedby}"></td>
+				
+			</tr>
+		</tbody>
+	</table>
+	<table thif="${reviewer != null}">
+	</table>
+	<div th:if="${reviewer==null}">No Records</div>	
+	
+	<button type="button" class="btn btn-primary"><a href="http://localhost:8080/reviewer/new">insert</a></button>	
+	
+</body>
+</html>
+

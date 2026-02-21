@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Add custom styles here */
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="mb-4">All Books</h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Edition</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.isbn}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.description}"></td>
+            <td th:text="${book.edition}"></td>
+            <td>
+                <a th:href="@{'/update/' + ${book.isbn}}" class="update-button">Update</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div th:if="${#lists.isEmpty(books)}" class="alert alert-info">No book found</div>
+    <a class="update-button" th:href="@{/insert}">Add New Book</a>
+</div>
+</body>
+</html>
